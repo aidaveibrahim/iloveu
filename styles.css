@@ -1,0 +1,91 @@
+body {
+    font-family: 'Georgia', serif;
+    background-color: #fffaf0; /* Fildişi Renk */
+    color: #800020; /* Bordo */
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Yatay taşmaları engellemek için */
+}
+
+header {
+    background-color: #ff6f61; /* Pembe Renk */
+    color: #fff;
+    padding: 20px;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    background-color: #b22222; /* Ateş Tuğlası Kırmızı */
+    overflow: hidden;
+}
+
+nav ul li {
+    display: inline;
+    padding: 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+main {
+    padding: 20px;
+}
+
+.gallery-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.gallery-container img {
+    margin: 10px;
+    width: 200px;
+    height: auto;
+    border: 2px solid #ff6f61; /* Pembe Renk */
+    border-radius: 10px;
+}
+
+footer {
+    background-color: #b22222; /* Ateş Tuğlası Kırmızı */
+    color: #fff;
+    padding: 10px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Kar taneleri */
+.snowflake {
+    position: fixed;
+    top: -10px;
+    z-index: 9999;
+    user-select: none;
+    pointer-events: none;
+    color: white;
+    font-size: 1em;
+    will-change: transform;
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(100vh);
+    }
+}
+
+#time-since {
+    background-color: #f7e7ce; /* Şampanya Renk */
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px 0;
+}
+
+#time-display {
+    font-size: 1.5em;
+    color: #800020; /* Bordo */
+}
