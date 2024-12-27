@@ -1,6 +1,6 @@
 body {
-    font-family: 'Georgia', serif;
-    background-color: #fffaf0; /* Fildişi Renk */
+    font-family: 'Dancing Script', cursive; /* Elegant font */
+    background: linear-gradient(to bottom, #ff9a9e, #fad0c4); /* Soft pink gradient */
     color: #800020; /* Bordo */
     text-align: center;
     margin: 0;
@@ -15,6 +15,11 @@ header {
     top: 0;
     width: 100%;
     z-index: 1000;
+    animation: fadeIn 2s ease-out;
+}
+
+header h1 {
+    font-family: 'Great Vibes', cursive; /* Romantic script font */
 }
 
 main {
@@ -33,42 +38,46 @@ main {
     align-items: center;
     justify-content: center;
     width: 90%;
-    max-width: 1000px; /* Maximum width of gallery item */
-    flex-direction: column; /* Default layout for larger screens */
+    max-width: 1000px;
+    flex-direction: column;
+    opacity: 0;
+    animation: fadeIn 3s ease-in-out forwards;
 }
 
 .gallery-item:nth-child(odd) .content {
-    flex-direction: row; /* Left image, right text for odd items */
+    flex-direction: row;
 }
 
 .gallery-item:nth-child(even) .content {
-    flex-direction: row-reverse; /* Right image, left text for even items */
+    flex-direction: row-reverse;
 }
 
 .gallery-item img {
-    width: 20vw; /* 20% of viewport width */
-    height: 20vw; /* Equal height for a square */
+    width: 20vw;
+    height: 20vw;
     object-fit: cover;
     border-radius: 50%;
     border: 5px solid #fff;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    animation: slideIn 2s ease-out forwards;
 }
 
 .gallery-item .text-container {
     padding: 20px;
-    background: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+    background: rgba(255, 255, 255, 0.8);
     border-radius: 10px;
-    width: 70%; /* Adjust text container width */
+    width: 70%;
     margin-top: 20px;
 }
 
 footer {
-    background-color: #b22222; /* Ateş Tuğlası Kırmızı */
+    background-color: #b22222;
     color: #fff;
     padding: 10px;
     position: relative;
     bottom: 0;
     width: 100%;
+    font-size: 0.9em;
 }
 
 /* Snowflakes */
@@ -79,11 +88,30 @@ footer {
     user-select: none;
     pointer-events: none;
     color: white;
-    font-size: 1em;
-    will-change: transform;
-    animation: fall linear infinite;
+    font-size: 1.5em; /* Slightly bigger snowflakes */
+    animation: fall 10s linear infinite;
 }
 
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+/* Snowflakes falling animation */
 @keyframes fall {
     to {
         transform: translateY(100vh);
@@ -93,20 +121,26 @@ footer {
 /* Responsive Styles */
 @media (max-width: 768px) {
     .gallery-item {
-        flex-direction: column; /* Stack images and text on small screens */
+        flex-direction: column;
         text-align: center;
     }
 
     .gallery-item img {
-        width: 40vw; /* Adjust image size for smaller screens */
+        width: 40vw;
         height: 40vw;
     }
 
     .gallery-item .text-container {
-        width: 80%; /* Make the text container take up more space */
+        width: 80%;
     }
 
     header {
         padding: 15px;
+    }
+}
+
+@media (max-width: 600px) {
+    .snowflake {
+        font-size: 1.2em; /* Adjust snowflakes for smaller screens */
     }
 }
