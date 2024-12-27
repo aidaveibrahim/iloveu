@@ -1,20 +1,29 @@
+// Maximum number of snowflakes at a time
+const maxSnowflakes = 50;
+
 // Kar taneleri oluşturma fonksiyonu
 function createSnowflake() {
-    const snowflake = document.createElement('div');
-    snowflake.classList.add('snowflake');
-    snowflake.textContent = '❄';
-    snowflake.style.left = Math.random() * window.innerWidth + 'px';
-    snowflake.style.animationDuration = Math.random() * 3 + 2 + 's'; // 2-5 saniye
-    snowflake.style.opacity = Math.random();
-    snowflake.style.fontSize = Math.random() * 10 + 10 + 'px'; // 10-20px
+    // Check the current number of snowflakes
+    const currentSnowflakes = document.querySelectorAll('.snowflake').length;
 
-    document.body.appendChild(snowflake);
+    // Only create a new snowflake if the limit hasn't been reached
+    if (currentSnowflakes < maxSnowflakes) {
+        const snowflake = document.createElement('div');
+        snowflake.classList.add('snowflake');
+        snowflake.textContent = '❄';
+        snowflake.style.left = Math.random() * window.innerWidth + 'px';
+        snowflake.style.animationDuration = Math.random() * 3 + 2 + 's'; // 2-5 saniye
+        snowflake.style.opacity = Math.random();
+        snowflake.style.fontSize = Math.random() * 10 + 10 + 'px'; // 10-20px
 
-    // Kar tanesi animasyonu bittiğinde DOM'dan kaldır
-    snowflake.addEventListener('animationend', () => {
-        snowflake.remove();
-    });
+        document.body.appendChild(snowflake);
+
+        // Kar tanesi animasyonu bittiğinde DOM'dan kaldır
+        snowflake.addEventListener('animationend', () => {
+            snowflake.remove();
+        });
+    }
 }
 
-// Belirli aralıklarla kar tanesi oluştur
+// Belirli aralıklarla kar tanesi oluştur (interval 200ms)
 setInterval(createSnowflake, 200);
