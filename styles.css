@@ -152,7 +152,6 @@ footer {
 /* Main container adjustments */
 main {
     padding: 20px;  /* Padding on the edges of main */
-    max-width: 1200px; /* Optional: restricts main content width */
     margin: 0 auto; /* Centers the content */
 }
 
@@ -170,4 +169,12 @@ main {
         transform: translateY(100vh); 
         opacity: 0;
     }
+}
+
+.decorative-line {
+    height: 50px; /* Adjust the height according to your line's image */
+    background-image: url('img/158210066_10578814.png'); /* Replace with your image path */
+    background-size: contain; /* Ensure the image scales properly */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    background-position: center;
 }
