@@ -1,16 +1,18 @@
+/* General styling for the page */
 body {
     font-family: 'Dancing Script', cursive; /* Elegant font */
-    background: linear-gradient(to bottom, #ff9a9e, #fad0c4); /* Soft pink gradient */
-    color: #800020; /* Bordo */
+    background: linear-gradient(to bottom, #f5f5dc, #ffffff); /* Beige to white gradient */
+    color: #000000; /* Black text for readability */
     text-align: center;
     margin: 0;
     padding: 0;
     overflow-x: hidden;
 }
 
+/* Styling for header */
 header {
-    background-color: #ff6f61; /* Pembe Renk */
-    color: #fff;
+    background-color: #000000; /* Black background */
+    color: #fff;  /* White text */
     padding: 20px;
     top: 0;
     width: 100%;
@@ -19,60 +21,66 @@ header {
 }
 
 header h1 {
-    font-family: 'Great Vibes', cursive; /* Romantic script font */
+    font-family: 'Great Vibes', cursive;
 }
 
-main {
-    margin: 0;
-}
-
-.gallery-item {
+/* Preface section adjustments */
+#preface {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 20px 0;
+    justify-content: center; /* Center horizontally */
+    padding: 20px 0;
 }
 
-.gallery-item .content {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 90%;
-    max-width: 1000px;
-    flex-direction: column;
-    opacity: 0;
-    animation: fadeIn 3s ease-in-out forwards;
-}
-
-.gallery-item:nth-child(odd) .content {
-    flex-direction: row;
-}
-
-.gallery-item:nth-child(even) .content {
-    flex-direction: row-reverse;
-}
-
-.gallery-item img {
-    width: 20vw;
-    height: 20vw;
-    object-fit: cover;
-    border-radius: 50%;
-    border: 5px solid #fff;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-    animation: slideIn 2s ease-out forwards;
-}
-
-.gallery-item .text-container {
+#preface .text-container {
+    width: 100%; /* Make the text container as wide as the preface */
+    max-width: 900px; /* Optional: restricts maximum width of text container */
     padding: 20px;
-    background: rgba(255, 255, 255, 0.8);
-    border-radius: 10px;
-    width: 70%;
-    margin-top: 20px;
+    text-align: center;
+    background: transparent; /* Remove background color */
 }
 
+#preface p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: #333; /* A darker color for better readability */
+}
+
+/* Photo Gallery (Grid) */
+.photo-gallery {
+    display: grid;
+    align-items: start;
+    grid-template-columns: repeat(4, minmax(0px, 1fr)); /* Flexible grid with minimum column width */
+    column-gap: 24px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    justify-items: center; /* Center images horizontally */
+}
+
+.photo-item {
+    position: relative;
+    width: auto; /* Let images retain their original width */
+    height: auto; /* Let images retain their original height */
+    overflow: hidden;
+}
+
+.photo-item img {
+    max-width: 100%; /* Allow images to scale to container width */
+    height: auto; /* Maintain original aspect ratio */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+/* Hover effect for images */
+.photo-item img:hover {
+    transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+/* Footer */
 footer {
-    background-color: #b22222;
-    color: #fff;
+    background-color: #000000; /* Black background */
+    color: #fff; /* White text */
     padding: 10px;
     position: relative;
     bottom: 0;
@@ -80,7 +88,7 @@ footer {
     font-size: 0.9em;
 }
 
-/* Snowflakes */
+/* Snowflakes styling */
 .snowflake {
     position: fixed;
     top: -10px;
@@ -88,8 +96,16 @@ footer {
     user-select: none;
     pointer-events: none;
     color: white;
-    font-size: 1.5em; /* Slightly bigger snowflakes */
-    animation: fall 10s linear infinite;
+    font-size: 20px;
+    will-change: transform;
+    animation: fall linear infinite;
+}
+
+/* Falling animation */
+@keyframes fall {
+    to {
+        transform: translateY(100vh);
+    }
 }
 
 /* Animations */
@@ -111,36 +127,31 @@ footer {
     }
 }
 
-/* Snowflakes falling animation */
-@keyframes fall {
-    to {
-        transform: translateY(100vh);
-    }
-}
-
 /* Responsive Styles */
 @media (max-width: 768px) {
-    .gallery-item {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .gallery-item img {
-        width: 40vw;
-        height: 40vw;
-    }
-
-    .gallery-item .text-container {
-        width: 80%;
-    }
-
     header {
         padding: 15px;
+    }
+
+    .photo-gallery {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Adjust grid for smaller screens */
+    }
+
+    .photo-item img {
+        width: 100%;
+        height: auto;
     }
 }
 
 @media (max-width: 600px) {
     .snowflake {
-        font-size: 1.2em; /* Adjust snowflakes for smaller screens */
+        font-size: 1.2em;
     }
+}
+
+/* Main container adjustments */
+main {
+    padding: 20px;  /* Padding on the edges of main */
+    max-width: 1200px; /* Optional: restricts main content width */
+    margin: 0 auto; /* Centers the content */
 }
