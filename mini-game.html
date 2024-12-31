@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Oyun - Özel Sürpriz</title>
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet"> <!-- Handwritten font -->
+    <style>
+        /* General styling */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        /* Container for the game */
+        .game-container {
+            margin-top: 50px;
+        }
+
+        /* A4 size simulation */
+        .contract-popup {
+            display: block; /* Show contract directly */
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #fff;
+            border: 1px solid #000;
+            padding: 20px;
+            width: 210mm;
+            height: 297mm;
+            box-sizing: border-box;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            text-align: left;
+            z-index: 1000;
+            background-image: url('https://www.transparenttextures.com/patterns/clean-paper.png'); /* Paper texture */
+            background-size: cover;
+        }
+
+        /* Handwritten font */
+        .contract-a4 h2 {
+            font-family: 'Kaushan Script', cursive;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            text-align: center;
+            color: #3b3b3b;
+        }
+
+        .contract-a4 p {
+            font-family: 'Kaushan Script', cursive;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: #3b3b3b;
+        }
+
+        .signature-area {
+            margin-top: 30px;
+            font-family: 'Kaushan Script', cursive;
+            font-size: 1.3rem;
+        }
+
+        .signature-area input {
+            width: 100%;
+            padding: 10px;
+            font-family: 'Kaushan Script', cursive;
+            font-size: 1.2rem;
+            margin-top: 10px;
+            border: 1px solid #000;
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+        /* Signature Button */
+        .sign-button {
+            background-color: #4CAF50;
+            color: white;
+            font-size: 1.2rem;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        #confirmationMessage {
+            display: none;
+        }
+
+        button {
+            margin-top: 20px;
+        }
+
+        /* Celebration Button */
+        #celebrateBtn {
+            background-color: #ff6347;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="game-container">
+        
+        <div id="contractPopup" class="contract-popup">
+            <div class="contract-a4">
+                <h2>Evlilik Sözleşmesi</h2>
+                <p>Sevgili [Onun Adı],</p>
+                <p>Bu, hayatımızda, aşkta ve her şeyde partnerler olduğumuzu belirten özel bir anlaşmadır!</p>
+                <p>Lütfen aşağıda imzalayarak bunu resmi hale getir! ❤️</p>
+                
+                <div class="signature-area">
+                    <label for="signature">İmza:</label>
+                    <input type="text" id="signature" placeholder="İmzanızı buraya yazın">
+                </div>
+                
+                <button id="signButton" class="sign-button">İmzala</button>
+            </div>
+        </div>
+        
+        <div id="confirmationMessage" class="confirmation-message">
+            <p>Tebrikler! Artık hayatımın partnerisin! 💍</p>
+            <button id="celebrateBtn">Kutlayalım!</button>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('signButton').addEventListener('click', function() {
+            // Hide the contract popup
+            document.getElementById('contractPopup').style.display = 'none';
+            // Show the confirmation message
+            document.getElementById('confirmationMessage').style.display = 'block';
+        });
+
+        document.getElementById('celebrateBtn').addEventListener('click', function() {
+            alert('Let\'s celebrate this special moment!');
+        });
+    </script>
+</body>
+</html>

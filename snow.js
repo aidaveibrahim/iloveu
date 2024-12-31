@@ -26,7 +26,7 @@ function createSnowflake() {
 }
 
 // Generate snowflakes at intervals
-setInterval(createSnowflake, 200);
+setInterval(createSnowflake, 300);
 
 // Optional: Adjust snowflakes on scroll or resize
 window.addEventListener('resize', () => {

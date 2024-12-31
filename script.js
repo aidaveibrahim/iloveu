@@ -1,19 +1,10 @@
-// script.js
+document.getElementById('signButton').addEventListener('click', function() {
+    // Hide the contract popup
+    document.getElementById('contractPopup').style.display = 'none';
+    // Show the confirmation message
+    document.getElementById('confirmationMessage').style.display = 'block';
+});
 
-document.addEventListener('DOMContentLoaded', () => {
-    const galleryItems = document.querySelectorAll('.gallery-item');
-
-    const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('show');
-            }
-        });
-    }, {
-        threshold: 0.1
-    });
-
-    galleryItems.forEach(item => {
-        observer.observe(item);
-    });
+document.getElementById('celebrateBtn').addEventListener('click', function() {
+    alert('Let\'s celebrate this special moment!');
 });

@@ -178,3 +178,31 @@ main {
     background-repeat: no-repeat; /* Prevent the image from repeating */
     background-position: center;
 }
+
+#redirect-button {
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #5a3e36; /* Elegant brown shade to match the theme */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#redirect-button:hover {
+    background-color: #7b5b49; /* Slightly lighter shade for hover */
+    transform: translateY(-2px); /* Subtle lift effect */
+}
+
+#redirect-button:active {
+    background-color: #9e7a66; /* Darker shade when clicked */
+    transform: translateY(0); /* Remove the hover lift effect */
+}
+
+#redirect-button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(88, 49, 34, 0.5); /* Focus outline with a warm color */
+}

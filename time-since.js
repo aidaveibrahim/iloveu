@@ -18,9 +18,9 @@ function updateTimeSince() {
 
     const timeDisplay = document.getElementById('time-display');
     if (years > 0) {
-        timeDisplay.textContent = `${years} yıl, ${remainingDays} gün, ${remainingHours} saat, ${remainingMinutes} dakika, ${remainingSeconds} saniye`;
+        timeDisplay.textContent = `${years} ${currentLangTimeUnits.year}, ${remainingDays} ${currentLangTimeUnits.day}, ${remainingHours} ${currentLangTimeUnits.hour}, ${remainingMinutes} ${currentLangTimeUnits.minute}, ${remainingSeconds} ${currentLangTimeUnits.second}`;
     } else {
-        timeDisplay.textContent = `${remainingDays} gün, ${remainingHours} saat, ${remainingMinutes} dakika, ${remainingSeconds} saniye`;
+        timeDisplay.textContent = `${remainingDays} ${currentLangTimeUnits.day}, ${remainingHours} ${currentLangTimeUnits.hour}, ${remainingMinutes} ${currentLangTimeUnits.minute}, ${remainingSeconds} ${currentLangTimeUnits.second}`;
     }
 
     setTimeout(updateTimeSince, 1000);

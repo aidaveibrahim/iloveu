@@ -6,44 +6,59 @@
     <title>Romantik Yılbaşı Sürprizi</title>
     <link rel="stylesheet" href="styles.css">
     <style>
-        /* Adding styles for the language buttons */
-        /* Styling for language buttons */
-.language-buttons {
-    position: fixed;
-    top: 10px;
-    right: 10px;
-    display: flex;
-    gap: 10px;
-}
+        
+        .language-buttons {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 14px;
+            cursor: pointer;
+        }
 
-.language-buttons button {
-    font-size: 14px; /* Make the buttons smaller */
-    padding: 6px 12px;
-    background-color: #fff;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            z-index: 1;
+            border-radius: 5px;
+            top: 100%;
+            right: 0;
+        }
 
-.language-buttons button:hover {
-    background-color: #f0f0f0;
-}
+        .language-buttons:hover .dropdown-content {
+            display: block;
+        }
 
+        .dropdown-content button {
+            padding: 8px 16px;
+            border: none;
+            background-color: #fff;
+            width: 100%;
+            text-align: left;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .dropdown-content button:hover {
+            background-color: #f0f0f0;
+        }
     </style>
 </head>
 <body>
     <header>
         <h1 id="header-title">Mutlu yıllar Güzelim!</h1>
         <p id="header-subtitle">Yeni bir yıl, yeni anılar... Ve seninle olmak her şeyin en güzel hali.</p>
-        <!-- Language Buttons Section -->
         <div class="language-buttons">
-            <button onclick="switchLanguage('tr')">TR</button>
-            <button onclick="switchLanguage('en')">EN</button>
-            <button onclick="switchLanguage('ru')">RU</button>
+            <button id="language-btn">TR</button>
+            <div class="dropdown-content">
+                <button onclick="switchLanguage('tr')">TR</button>
+                <button onclick="switchLanguage('en')">EN</button>
+                <button onclick="switchLanguage('kz')">KZ</button>
+                <button onclick="switchLanguage('ru')">RU</button>
+            </div>
         </div>
     </header>
-    
 
     <main>
         <section id="preface">
@@ -57,174 +72,232 @@
         <section class="photo-gallery">
             <div style="display: grid; row-gap: 24px; grid-template-columns: minmax(0px, 1fr);">
                 <div class="photo-item">
-                    <img src="img/img-1.jpg" alt="Bizim En Güzel Anımız">
+                    <img src="img/img-1.jpg" alt="16.04.2024 / Barcelona">
                 </div>
                 <div class="photo-item">
-                    <img src="img/img-5.jpg" alt="Bizim En Güzel Anımız">
+                    <img src="img/img-5.jpg" alt="08.05.2024 / Guarda">
                 </div>
                 <div class="photo-item">
-                    <img src="img/img-9.jpg" alt="Bizim En Güzel Anımız">
+                    <img src="img/img-9.jpg" alt="15.04.2024 / Madrid">
                 </div>
                 <div class="photo-item">
-                    <img src="img/img-13.jpg" alt="Bizim En Güzel Anımız">
+                    <img src="img/img-13.jpg" alt="28.05.2024 / Paris">
                 </div>
                 <div class="photo-item">
-                    <img src="img/img-21.jpg" alt="Bizim En Güzel Anımız">
+                    <img src="img/img-21.jpg" alt="28.05.2024 / Paris">
                 </div>
                 <div class="photo-item">
-                    <img src="img/img-23.jpg" alt="Bizim En Güzel Anımız">
+                    <img src="img/img-23.jpg" alt="28.05.2024 / Paris">
                 </div>
                 <div class="photo-item">
-                    <img src="img/img-29.jpg" alt="Bizim En Güzel Anımız">
+                    <img src="img/img-29.jpg" alt="23.11.2024 / İzmit">
                 </div>
                 <div class="photo-item">
-                    <img src="img/img-33.jpg" alt="Bizim En Güzel Anımız">
-                </div>
-            </div>
-            <div style="display: grid; row-gap: 24px; grid-template-columns: minmax(0px, 1fr);">
-                <div class="photo-item">
-                    <img src="img/img-2.jpg" alt="Bizim En Güzel Anımız">
-                </div>
-                <div class="photo-item">
-                    <img src="img/img-6.jpg" alt="Bizim En Güzel Anımız">
-                </div>
-                <div class="photo-item">
-                    <img src="img/img-14.jpg" alt="Bizim En Güzel Anımız">
-                </div>
-                <div class="photo-item">
-                    <img src="img/img-18.jpg" alt="Bizim En Güzel Anımız">
-                </div>
-                <div class="photo-item">
-                    <img src="img/img-22.jpg" alt="Bizim En Güzel Anımız">
-                </div>
-                <div class="photo-item">
-                    <img src="img/img-26.jpg" alt="Bizim En Güzel Anımız">
-                </div>
-                <div class="photo-item">
-                    <img src="img/img-30.jpg" alt="Bizim En Güzel Anımız">
-                </div>
-                <div class="photo-item">
-                    <img src="img/img-34.jpg" alt="Bizim En Güzel Anımız">
+                    <img src="img/img-33.jpg" alt="24.11.2024 / Ormanya">
                 </div>
             </div>
             <div style="display: grid; row-gap: 24px; grid-template-columns: minmax(0px, 1fr);">
                 <div class="photo-item">
-                    <img src="img/img-3.jpg" alt="Bizim En Güzel Anımız">
+                    <img src="img/img-2.jpg" alt="17.04.2024 / Barcelona">
                 </div>
                 <div class="photo-item">
-                    <img src="img/img-7.jpg" alt="Bizim En Güzel Anımız">
+                    <img src="img/img-6.jpg" alt="27.11.2024 / İzmit">
                 </div>
                 <div class="photo-item">
-                    <img src="img/img-11.jpg" alt="Bizim En Güzel Anımız">
+                    <img src="img/img-14.jpg" alt="14.04.2024 / Madrid">
                 </div>
                 <div class="photo-item">
-                    <img src="img/img-15.jpg" alt="Bizim En Güzel Anımız">
+                    <img src="img/img-18.jpg" alt="17.05.2024 / Sortelha">
                 </div>
                 <div class="photo-item">
-                    <img src="img/img-19.jpg" alt="Bizim En Güzel Anımız">
+                    <img src="img/img-22.jpg" alt="28.05.2024 / Paris">
                 </div>
                 <div class="photo-item">
-                    <img src="img/img-27.jpg" alt="Bizim En Güzel Anımız">
+                    <img src="img/img-26.jpg" alt="10.11.2024 / İzmit">
                 </div>
                 <div class="photo-item">
-                    <img src="img/img-31.jpg" alt="Bizim En Güzel Anımız">
+                    <img src="img/img-30.jpg" alt="24.11.2024 / Ormanya">
                 </div>
                 <div class="photo-item">
-                    <img src="img/img-35.jpg" alt="Bizim En Güzel Anımız">
+                    <img src="img/img-34.jpg" alt="24.12.2024 / İzmit">
                 </div>
             </div>
             <div style="display: grid; row-gap: 24px; grid-template-columns: minmax(0px, 1fr);">
                 <div class="photo-item">
-                    <img src="img/img-4.jpg" alt="Bizim En Güzel Anımız">
+                    <img src="img/img-3.jpg" alt="25.04.2024 / Guarda">
                 </div>
                 <div class="photo-item">
-                    <img src="img/img-8.jpg" alt="Bizim En Güzel Anımız">
+                    <img src="img/img-7.jpg" alt="05.04.2024 / İlk selfie :)">
                 </div>
                 <div class="photo-item">
-                    <img src="img/img-12.jpg" alt="Bizim En Güzel Anımız">
+                    <img src="img/img-11.jpg" alt="26.04.2024 / Guarda">
                 </div>
                 <div class="photo-item">
-                    <img src="img/img-16.jpg" alt="Bizim En Güzel Anımız">
+                    <img src="img/img-15.jpg" alt="16.04.2024 / Barcelona">
                 </div>
                 <div class="photo-item">
-                    <img src="img/img-20.jpg" alt="Bizim En Güzel Anımız">
+                    <img src="img/img-19.jpg" alt="23.05.2024 / Berlin">
                 </div>
                 <div class="photo-item">
-                    <img src="img/img-24.jpg" alt="Bizim En Güzel Anımız">
+                    <img src="img/img-27.jpg" alt="10.11.2024 / İzmit">
                 </div>
                 <div class="photo-item">
-                    <img src="img/img-32.jpg" alt="Bizim En Güzel Anımız">
+                    <img src="img/img-31.jpg" alt="24.11.2024 / Ormanya">
                 </div>
                 <div class="photo-item">
-                    <img src="img/img-36.jpg" alt="Bizim En Güzel Anımız">
+                    <img src="img/img-35.jpg" alt="28.12.2024 / İstanbul">
+                </div>
+            </div>
+            <div style="display: grid; row-gap: 24px; grid-template-columns: minmax(0px, 1fr);">
+                <div class="photo-item">
+                    <img src="img/img-4.jpg" alt="25.05.2024 / Guarda">
+                </div>
+                <div class="photo-item">
+                    <img src="img/img-8.jpg" alt="15.04.2024 / Madrid">
+                </div>
+                <div class="photo-item">
+                    <img src="img/img-12.jpg" alt="16.04.2024 / Barcelona">
+                </div>
+                <div class="photo-item">
+                    <img src="img/img-16.jpg" alt="25.04.2024 / Guarda">
+                </div>
+                <div class="photo-item">
+                    <img src="img/img-20.jpg" alt="26.05.2024 / Brüksel">
+                </div>
+                <div class="photo-item">
+                    <img src="img/img-24.jpg" alt="15.07.2024 / İzmit">
+                </div>
+                <div class="photo-item">
+                    <img src="img/img-32.jpg" alt="24.11.2024 / İzmit">
+                </div>
+                <div class="photo-item">
+                    <img src="img/img-36.jpg" alt="10.11.2024 / İzmit">
                 </div>
             </div>
         </section>
 
         <div class="decorative-line"></div>
 
-
         <section>
             <div id="time-since">
                 <h3 id="time-since-title">İlişkimizin Başlangıcından Beri Geçen Zaman:</h3>
                 <p id="time-display"></p>
                 <p id="time-since-footer">ama bana ne bu zaman ne de daha geçireceğimiz uzun senelerek yetmez.</p>
+                <p>Bu zamanın sana da yetmeyeceğini düşünüyorsan butona tıkla. :)</p>
             </div>
+
+            <button id="redirect-button" onclick="redirectToGame()">Tıkla</button>
         </section>
     </main>
 
     <footer>
         <p id="footer-text">&copy; 2024, Seni Çok Seviyorum, Birlikte Daha Güzel Yıllara!</p>
+        <p id="footer-made-with-love">Bu websitesi aşk ile yapıldı.</p>
     </footer>
+    
 
     <script src="snow.js"></script>
     <script src="time-since.js"></script>
     <script>
-        // Language data for Turkish, English, and Russian
-        const languageData = {
-            tr: {
-                headerTitle: "Mutlu yıllar Güzelim!",
-                headerSubtitle: "Yeni bir yıl, yeni anılar... Ve seninle olmak her şeyin en güzel hali.",
-                prefaceText: "Sevgilim... Kocaman bir yılı geride bıraktık. Birlikte uzun bir zaman geçirdik. Şimdi ise yeni bir yılı beraber karşılıyoruz. Birlikte karşıladığımız ilk yıl bu, geriye kalan ömrümüzde karşılayacağımız yılların ilki, daha çok yıllara beraber gireceğiz... Hayatıma girdiğin andan beri birbirimiz için ne kadar uyumlu olduğumuzu ve bir o kadar da birbirimize benzediğimizi gördüm. Seninle sanki bir elmanın iki yarısı gibi olduğumuzu hissettim. Her anımı seninle geçirdiğim ve bana yol arkadaşı olduğun için çok mutluyum. İyi ki hayatımdasın. Seni çoookkkk seviyorum. <3",
-                timeSinceTitle: "İlişkimizin Başlangıcından Beri Geçen Zaman:",
-                timeSinceFooter: "Ama bana ne bu zaman ne de daha geçireceğimiz uzun seneler yetmez.",
-                footerText: "&copy; 2024, Seni Çok Seviyorum, Birlikte Daha Güzel Yıllara!"
-            },
-            en: {
-                headerTitle: "Happy New Year, My Beautiful!",
-                headerSubtitle: "A new year, new memories... And being with you is the most beautiful thing.",
-                prefaceText: "My love... We’ve left a big year behind us. We’ve spent so much time together. Now we’re greeting the new year together. This is our first year we are welcoming, and it’s the first of many more years we’ll share... Since you entered my life, I’ve realized how well we fit together and how much we resemble each other. I feel like we are like two halves of the same apple. I’m so happy that I spend every moment with you and that you’re my companion in life. I’m so glad you’re in my life. I love you soooo much. <3",
-                timeSinceTitle: "Time Since the Beginning of Our Relationship:",
-                timeSinceFooter: "But neither this time nor the many more years we will spend together will ever be enough.",
-                footerText: "&copy; 2024, I Love You So Much, To More Beautiful Years Together!"
-            },
-            ru: {
-                headerTitle: "С Новым Годом, Моя Красотка!",
-                headerSubtitle: "Новый год, новые воспоминания... И быть с тобой — это самое красивое.",
-                prefaceText: "Моя любовь... Мы оставили позади огромный год. Мы провели много времени вместе. Теперь мы встречаем новый год вместе. Это наш первый год, который мы встречаем, и это первый из множества лет, которые мы будем встречать вместе... С тех пор как ты вошла в мою жизнь, я понял, как хорошо мы подходим друг другу и как сильно мы похожи. Мне кажется, что мы как две половинки одного яблока. Я так счастлив, что провожу каждое мгновение с тобой, и что ты — мой спутник по жизни. Я так рад, что ты в моей жизни. Я тебя очень сильно люблю. <3",
-                timeSinceTitle: "Время с момента начала наших отношений:",
-                timeSinceFooter: "Но ни это время, ни те многие годы, которые мы проведем вместе, не будут достаточно.",
-                footerText: "&copy; 2024, Я тебя очень люблю, к более красивым годам вместе!"
-            }
-        };
-
-        // Function to switch language
-        function switchLanguage(language) {
-            // Check if the language exists in the languageData object
-            if (languageData[language]) {
-                document.getElementById("header-title").innerText = languageData[language].headerTitle;
-                document.getElementById("header-subtitle").innerText = languageData[language].headerSubtitle;
-                document.getElementById("preface-text").innerText = languageData[language].prefaceText;
-                document.getElementById("time-since-title").innerText = languageData[language].timeSinceTitle;
-                document.getElementById("time-since-footer").innerText = languageData[language].timeSinceFooter;
-                document.getElementById("footer-text").innerHTML = languageData[language].footerText;
-            } else {
-                console.log('Language data not found for:', language);
-            }
+        const langElements = {
+    tr: {
+        headerTitle: "Mutlu yıllar Güzelim!",
+        headerSubtitle: "Yeni bir yıl, yeni anılar... Ve seninle olmak her şeyin en güzel hali.",
+        prefaceText: "Sevgilim... Kocaman bir yılı geride bıraktık. Birlikte uzun bir zaman geçirdik. Şimdi ise yeni bir yılı beraber karşılıyoruz. Birlikte karşıladığımız ilk yıl bu, geriye kalan ömrümüzde karşılayacağımız yılların ilki, daha çok yıllara beraber gireceğiz... Hayatıma girdiğin andan beri birbirimiz için ne kadar uyumlu olduğumuzu ve bir o kadar da birbirimize benzediğimizi gördüm. Seninle sanki bir elmanın iki yarısı gibi olduğumuzu hissettim. Her anımı seninle geçirdiğim ve bana yol arkadaşı olduğun için çok mutluyum. İyi ki hayatımdasın. Seni çoookkkk seviyorum. <3",
+        timeSinceTitle: "İlişkimizin Başlangıcından Beri Geçen Zaman:",
+        timeSinceFooter: "ama bana ne bu zaman ne de daha geçireceğimiz uzun senelerek yetmez.",
+        buttonText: "Tıkla", // Translation for the button text
+        redirectText: "Bu zamanın sana da yetmeyeceğini düşünüyorsan butona tıkla. :)", // Translation for the new paragraph
+        footerText: "&copy; 2024, Seni Çok Seviyorum, Birlikte Daha Güzel Yıllara!",
+        footerMadeWithLove: "Bu websitesi aşk ile yapıldı.",
+        timeUnits: {
+            year: "yıl",
+            day: "gün",
+            hour: "saat",
+            minute: "dakika",
+            second: "saniye"
         }
+    },
+    en: {
+        headerTitle: "Happy New Year My Love!",
+        headerSubtitle: "A new year, new memories... And being with you is the best of everything.",
+        prefaceText: "My love... We have left a big year behind. We spent a long time together. Now we are welcoming a new year together. This is the first year we are welcoming together, the first of the years we will welcome in the rest of our lives, we will enter many more years together... Since the moment you entered my life, I saw how compatible we are for each other and how similar we are to each other. I felt that we are like two halves of an apple with you. I am very happy to spend every moment with you and to have you as my companion. I'm so glad you're in my life. I love you sooooooo much. <3",
+        timeSinceTitle: "Time Since the Beginning of Our Relationship:",
+        timeSinceFooter: "but neither this time nor the long years we will spend together are enough for me.",
+        buttonText: "Click", // Translation for the button text
+        redirectText: "If you think this time is not enough for you, click the button. :)", // Translation for the new paragraph
+        footerText: "&copy; 2024, I Love You So Much, To More Beautiful Years Together!",
+        footerMadeWithLove: "This website was made with love.",
+        timeUnits: {
+            year: "year",
+            day: "days",
+            hour: "hours",
+            minute: "minutes",
+            second: "seconds"
+        }
+    },
+    ru: {
+        headerTitle: "С Новым Годом Моя Любовь!",
+        headerSubtitle: "Новый год, новые воспоминания... И быть с тобой - лучшее из всего.",
+        prefaceText: "Моя любовь... Мы оставили большой год позади. Мы провели много времени вместе. Теперь мы встречаем Новый год вместе. Это первый год, который мы встречаем вместе, первый из годов, которые мы будем встречать до конца нашей жизни, мы будем встречать еще много лет вместе... С того момента, как ты вошла в мою жизнь, я понял, как мы совместимы друг с другом и как мы похожи друг на друга. Я чувствовал, что мы с тобой как две половинки яблока. Я очень счастлив проводить каждое мгновение с тобой и иметь тебя как спутника жизни. Я так рад, что ты в моей жизни. Я тебя очень люблю. <3",
+        timeSinceTitle: "Время с начала наших отношений:",
+        timeSinceFooter: "но мне недостаточно ни этого времени, ни долгих лет, которые мы проведем вместе.",
+        buttonText: "Нажми", // Translation for the button text
+        redirectText: "Если ты думаешь, что этого времени тебе не хватает, нажми на кнопку. :)", // Translation for the new paragraph
+        footerText: "&copy; 2024, Я Тебя Очень Люблю, К Больше Прекрасным Годам Вместе!",
+        footerMadeWithLove: "Этот сайт был создан с любовью.",
+        timeUnits: {
+            year: "лет",
+            day: "дней",
+            hour: "часов",
+            minute: "минут",
+            second: "секунд"
+        }
+    },
+    kz: {  // Kazakça versiyon
+        headerTitle: "Жаңа жылмен, Қымбаттым!",
+        headerSubtitle: "Жаңа жыл, жаңа естеліктер... Сенмен болу - барлықтың ең жақсысы.",
+        prefaceText: "Қымбаттым... Біз үлкен бір жылды артта қалдырдық. Біз ұзақ уақыт бірге болдық. Енді жаңа жылды бірге қарсы аламыз. Бұл біз қарсы алған бірінші жыл, өмірімізде қарсы алатын алғашқы жыл, біз бірге көп жылдар бойына қарсы аламыз... Сен менің өміріме келген сәттен бастап, біз бір-бірімізге қаншалықты үйлесімді екенімізді және қаншалықты ұқсас екенімізді байқадым. Сеніңмен бірге екі жарты алма сияқты болатынымды сезіндім. Әр сәтімді сеніңмен өткізу және жолдасым болу мені өте бақытты етеді. Өмірімде бар екеніңе қуаныштымын. Мен сені қатты қатты сүйемін. <3",
+        timeSinceTitle: "Қатынасымыз басталғаннан бері уақыт:",
+        timeSinceFooter: "бірақ мен үшін бұл уақыт та, бірге өткізетін ұзақ жылдарымыз да жеткіліксіз.",
+        buttonText: "Бас", // Translation for the button text
+        redirectText: "Егер сен бұл уақыт саған жетпейді деп ойласаң, батырманы бас. :)", // Translation for the new paragraph
+        footerText: "&copy; 2024, Мен сені қатты сүйемін, Бірге Көптеген Керемет Жылдарға!",
+        footerMadeWithLove: "Бұл вебсайт махаббатпен жасалған.",
+        timeUnits: {
+            year: "жыл",
+            day: "күн",
+            hour: "сағат",
+            minute: "минут",
+            second: "секунд"
+        }
+    }
+};
 
-        // Set default language to Turkish on page load
-        switchLanguage('tr');
+
+let currentLang = 'tr';  // Default language
+        const languageBtn = document.getElementById('language-btn');
+function switchLanguage(lang) {
+    document.getElementById('header-title').innerText = langElements[lang].headerTitle;
+    document.getElementById('header-subtitle').innerText = langElements[lang].headerSubtitle;
+    document.getElementById('preface-text').innerText = langElements[lang].prefaceText;
+    document.getElementById('time-since-title').innerText = langElements[lang].timeSinceTitle;
+    document.getElementById('time-since-footer').innerText = langElements[lang].timeSinceFooter;
+    document.getElementById('redirect-button').innerText = langElements[lang].buttonText;  // Change button text
+    document.getElementById('time-since').querySelector('p:nth-child(4)').innerText = langElements[lang].redirectText;  // Change paragraph text
+    document.getElementById('footer-text').innerHTML = langElements[lang].footerText;
+    document.getElementById('footer-made-with-love').innerText = langElements[lang].footerMadeWithLove; // Eklenen satır
+    languageBtn.innerText = lang.toUpperCase();  // Update button text to selected language
+    currentLang = lang;
+    // Update the time units in the global variable
+    currentLangTimeUnits = langElements[lang].timeUnits;
+}
+
+let currentLangTimeUnits = langElements.tr.timeUnits; // Default language
+
+function redirectToGame() {
+        window.location.href = 'mini-game.html'; // Redirect to the mini-game page in the same tab
+    }
     </script>
 </body>
 </html>
