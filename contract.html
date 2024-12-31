@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Oyun - Özel Sürpriz</title>
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet"> <!-- Handwritten font -->
+    <link rel="stylesheet" href="styles2.css"> <!-- External CSS link -->
+</head>
+<body>
+    <div class="game-container">
+        <div id="contractPopup" class="contract-popup">
+            <div class="contract-a4">
+                <h2>Ömür boyu Birliktelik Sözleşmesi</h2>
+                <p>Sayın Aida Omirzak,</p>
+                <p>Bu, hayatımızda, aşkta ve her şeyde partnerler olduğumuzu belirten özel bir anlaşmadır! Bir önceki sayfada geçireceğimiz hiçbir zamanın sana da yetmeyeceğini itiraf etmiştin. Bu benim için çok güzel bir haber. Hadi o zaman şimdi, 2025 yılına henüz yeni girmişken, daha ilk dakikalarında benim hali hazırda imzalamış olduğum bu sözleşmeyi sen de imzala.</p>
+                <p>Birlikte bunu resmiyete dökelim!</p>
+            </div>
+            <div class="signature">
+                <div>İbrahim Özkardeş</div>
+                <div>
+                    İmza:
+                    <input>
+                    <button id="signButton">İmzala</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Müzik dosyasını dahil etme -->
+    <audio id="music" src="music.mp3" preload="auto"></audio>
+
+    <script src="snow.js"></script>
+    <script>
+        // Butona tıklama olayını yakalayarak müzik çalma
+        document.getElementById("signButton").addEventListener("click", function() {
+            var music = document.getElementById("music");
+            music.play();  // Müzik çalmaya başlar
+        });
+    </script>
+</body>
+</html>
