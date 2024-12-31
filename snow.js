@@ -1,6 +1,6 @@
 // Array of snowflake types (can include different symbols)
 const snowflakeTypes = ['❄', '❅', '✧', '✩'];
-const maxSnowflakes = 500; // Maksimum kar tanesi sayısı
+const maxSnowflakes = 200; // Maksimum kar tanesi sayısı
 
 // Function to create snowflakes
 function createSnowflake() {
@@ -32,4 +32,4 @@ function createSnowflake() {
 }
 
 // Generate snowflakes at intervals
-setInterval(createSnowflake, 10);
+setInterval(createSnowflake, 200);
