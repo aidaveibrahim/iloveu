@@ -30,12 +30,24 @@
     <!-- Müzik dosyasını dahil etme -->
     <audio id="music" src="music.mp3" preload="auto"></audio>
 
+    <button id="stopButton" style="display: none;">Müziği Durdur</button>
+
     <script src="snow.js"></script>
     <script>
         // Butona tıklama olayını yakalayarak müzik çalma
         document.getElementById("signButton").addEventListener("click", function() {
             var music = document.getElementById("music");
+            var stopButton = document.getElementById("stopButton");
             music.play();  // Müzik çalmaya başlar
+            stopButton.style.display = 'block';  // Durdur butonunu göster
+        });
+
+        // Durdur butonuna tıklama olayını yakalayarak müziği durdurma
+        document.getElementById("stopButton").addEventListener("click", function() {
+            var music = document.getElementById("music");
+            music.pause();  // Müzik durdurulur
+            music.currentTime = 0;  // Müziği başa sar
+            this.style.display = 'none';  // Durdur butonunu gizle
         });
     </script>
 </body>
