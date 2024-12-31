@@ -186,7 +186,8 @@
                 <h3 id="time-since-title">İlişkimizin Başlangıcından Beri Geçen Zaman:</h3>
                 <p id="time-display"></p>
                 <p id="time-since-footer">ama bana ne bu zaman ne de daha geçireceğimiz uzun senelerek yetmez.</p>
-                <p>Bu zamanın sana da yetmeyeceğini düşünüyorsan butona tıkla. :)</p>
+                <p>Bu zamanın sana da yetmeyeceğini düşünüyorsan butona tıkla. Eğleneceksin. :)</p>
+                <p id="surprise">Ayrıca bu sayfada bir sürpriz daha sakladım. Fakat bulman gerek. :)</p>
             </div>
 
             <button id="redirect-button" onclick="redirectToGame()">Tıkla</button>
@@ -210,7 +211,8 @@
         timeSinceTitle: "İlişkimizin Başlangıcından Beri Geçen Zaman:",
         timeSinceFooter: "ama bana ne bu zaman ne de daha geçireceğimiz uzun senelerek yetmez.",
         buttonText: "Tıkla", // Translation for the button text
-        redirectText: "Bu zamanın sana da yetmeyeceğini düşünüyorsan butona tıkla. :)", // Translation for the new paragraph
+        redirectText: "Bu zamanın sana da yetmeyeceğini düşünüyorsan butona tıkla. Eğleneceksin. :)",
+        textUnderRedirectText: "Ayrıca bu sayfada bir sürpriz daha sakladım. Fakat bulman gerek. :)",
         footerText: "&copy; 2024, Seni Çok Seviyorum, Birlikte Daha Güzel Yıllara!",
         footerMadeWithLove: "Bu websitesi aşk ile yapıldı.",
         timeUnits: {
@@ -229,6 +231,7 @@
         timeSinceFooter: "but neither this time nor the long years we will spend together are enough for me.",
         buttonText: "Click", // Translation for the button text
         redirectText: "If you think this time is not enough for you, click the button. :)", // Translation for the new paragraph
+        textUnderRedirectText: "And I have another surprise hidden on this page. But you need to find it. :)",
         footerText: "&copy; 2024, I Love You So Much, To More Beautiful Years Together!",
         footerMadeWithLove: "This website was made with love.",
         timeUnits: {
@@ -247,6 +250,7 @@
         timeSinceFooter: "но мне недостаточно ни этого времени, ни долгих лет, которые мы проведем вместе.",
         buttonText: "Нажми", // Translation for the button text
         redirectText: "Если ты думаешь, что этого времени тебе не хватает, нажми на кнопку. :)", // Translation for the new paragraph
+        textUnderRedirectText: "И у меня есть еще один сюрприз на этой странице. Но тебе нужно его найти. :)",
         footerText: "&copy; 2024, Я Тебя Очень Люблю, К Больше Прекрасным Годам Вместе!",
         footerMadeWithLove: "Этот сайт был создан с любовью.",
         timeUnits: {
@@ -265,6 +269,7 @@
         timeSinceFooter: "бірақ мен үшін бұл уақыт та, бірге өткізетін ұзақ жылдарымыз да жеткіліксіз.",
         buttonText: "Бас", // Translation for the button text
         redirectText: "Егер сен бұл уақыт саған жетпейді деп ойласаң, батырманы бас. :)", // Translation for the new paragraph
+        textUnderRedirectText: "Және менде осы бетте тағы бір тосын сый жасырылған. Бірақ оны табуың керек. :)",
         footerText: "&copy; 2024, Мен сені қатты сүйемін, Бірге Көптеген Керемет Жылдарға!",
         footerMadeWithLove: "Бұл вебсайт махаббатпен жасалған.",
         timeUnits: {
@@ -287,6 +292,7 @@ function switchLanguage(lang) {
     document.getElementById('time-since-title').innerText = langElements[lang].timeSinceTitle;
     document.getElementById('time-since-footer').innerText = langElements[lang].timeSinceFooter;
     document.getElementById('redirect-button').innerText = langElements[lang].buttonText;  // Change button text
+    document.getElementById('surprise').innerText = langElements[lang].textUnderRedirectText
     document.getElementById('time-since').querySelector('p:nth-child(4)').innerText = langElements[lang].redirectText;  // Change paragraph text
     document.getElementById('footer-text').innerHTML = langElements[lang].footerText;
     document.getElementById('footer-made-with-love').innerText = langElements[lang].footerMadeWithLove; // Eklenen satır
