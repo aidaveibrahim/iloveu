@@ -1,6 +1,6 @@
 // Array of snowflake types (can include different symbols)
-const snowflakeTypes = ['❄', '❅', '✧', '✩'];
-const maxSnowflakes = 200; // Maksimum kar tanesi sayısı
+const snowflakeTypes = ["🌸", "🌼", "🌺", "🌷"];
+const maxSnowflakes = 100; // Maksimum kar tanesi sayısı
 
 // Function to create snowflakes
 function createSnowflake() {
